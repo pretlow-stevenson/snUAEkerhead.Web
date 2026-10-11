@@ -1,0 +1,9 @@
+Self-hosted Latin webfont supplied by Google Fonts.
+
+Manrope
+https://github.com/google/fonts/tree/main/ofl/manrope
+Variable 400-500, Google Fonts version 20.
+License: Manrope-OFL.txt
+
+Manrope is distributed under the SIL Open Font License 1.1.
+The webfont is served locally; the site makes no requests to Google Fonts.
