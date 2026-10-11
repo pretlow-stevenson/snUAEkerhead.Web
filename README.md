@@ -15,11 +15,13 @@ node --check site.js
 node --test tests/site.test.cjs
 ```
 
-The checks exercise navigation, focus, motion controls, email draft encoding and clipboard fallbacks. Native dialog behavior, email validation and responsive image framing also require browser checks.
+The checks exercise navigation, focus, motion controls and clipboard fallbacks. Native dialog behavior and responsive image framing also require browser checks.
+
+When changing the script or stylesheet, update its asset version in `index.html` so cached browser assets match the current markup.
 
 The hero photograph pans and zooms over 12 seconds, then returns over 12 seconds. Visitors can pause it. Reduced-motion preferences disable animation, and open dialogs or hidden documents suspend it.
 
-Enquiries prepare an email draft addressed to `enquiries@snuaekerhead.ae`. Visitors send it through their email application; the site has no enquiry backend or persistent form storage.
+Enquiries provide a direct email link to `enquiries@snuaekerhead.ae` and a Copy address button with a manual selection fallback. Visitors write through their email application; the site has no enquiry form or backend.
 
 The favicon and touch icon use the existing brand emblem. The supplied photographs and brand artwork remain the sources for the delivered assets. Manrope is self-hosted with its SIL Open Font License in `fonts/`.
 

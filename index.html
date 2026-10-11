@@ -13,8 +13,8 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180" />
   <link rel="preload" href="images/exploration-1800.webp" imagesrcset="images/exploration-780.webp 780w, images/exploration-1200.webp 1200w, images/exploration-1800.webp 1800w, images/exploration-2264.webp 2264w" imagesizes="(max-width: 700px) 100vw, 58vw" as="image" type="image/webp" />
   <link rel="preload" href="fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="styles.css" />
-  <script src="site.js" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20261011-contact" />
+  <script src="site.js?v=20261011-contact" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -101,18 +101,6 @@
           <p id="address-status" class="copy-status" role="status" aria-live="polite" hidden></p>
           <input id="address-copy" class="copy-fallback" aria-label="Email address to copy" value="enquiries@snuaekerhead.ae" readonly hidden />
         </div>
-        <p id="form-note" class="form-note">Name, email and message are required.</p>
-        <form id="enquiry-form" class="enquiry-form" method="dialog" aria-label="Enquiry" aria-describedby="form-note email-note">
-          <div class="form-field"><label for="enquiry-name">Name</label><input id="enquiry-name" name="name" autocomplete="name" maxlength="80" required /></div>
-          <div class="form-field"><label for="enquiry-email">Email</label><input id="enquiry-email" name="email" type="email" inputmode="email" autocomplete="email" autocapitalize="off" spellcheck="false" maxlength="254" required /></div>
-          <div class="form-field form-field--wide"><label for="enquiry-type">Enquiry type <span>(optional)</span></label><select id="enquiry-type" name="type"><option value="">Select a topic</option><option value="General enquiry">General enquiry</option><option value="Collaboration">Collaboration</option><option value="Press">Press</option></select></div>
-          <div class="form-field form-field--wide"><label for="enquiry-message">Message <span>(up to 1,500 characters)</span></label><textarea id="enquiry-message" name="message" maxlength="1500" required></textarea></div>
-          <div class="form-actions">
-            <button id="prepare-enquiry" class="form-button" type="submit">Prepare email draft</button>
-            <div id="draft-actions" hidden><p id="draft-status" class="draft-status" role="status" aria-live="polite"></p><div class="draft-buttons"><a id="draft-link" class="form-button">Open email draft</a><button id="copy-enquiry" class="copy-button" type="button">Copy enquiry</button></div><textarea id="draft-copy" class="copy-fallback draft-copy" aria-label="Prepared enquiry" readonly hidden></textarea></div>
-            <p id="email-note" class="email-note">This form prepares an email draft. You send it from your email app.</p>
-          </div>
-        </form>
       </section>
     </div>
     <p class="panel-footer">United Arab Emirates</p>
