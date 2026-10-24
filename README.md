@@ -25,7 +25,7 @@ The interactive landing fits the available viewport height, adapting its spacing
 
 The menu and editorial sections share a stable panel width. Opening takes 520 ms and closing takes 380 ms, with a fading backdrop; content changes fade out over 160 ms and in over 240 ms. The dialog retains its modal focus boundary and scroll lock until exit completes. Reduced motion and hidden tabs settle pending transitions immediately. Interrupted navigation uses the latest destination.
 
-About explains the UAE foundation, presence and control, garment design priorities and individual expression. Exploration draws on the founder’s Dubai and September 2026 Tokyo experiences, distinguishing developing Travel Series concepts from released products. These sections contain no duplicated hero imagery, and the same content remains available without JavaScript.
+About explains our UAE foundation, presence and control, garment design priorities and individual expression. Exploration presents our Dubai and September 2026 Tokyo experiences in the same collective brand voice, distinguishing developing Travel Series concepts from released products. These sections contain no duplicated hero imagery, and the same content remains available without JavaScript.
 
 Enquiries provide a direct email link to `enquiries@snuaekerhead.ae` and a Copy address button with a manual selection fallback. Visitors write through their email application; the site has no enquiry form or backend.
 
