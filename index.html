@@ -8,13 +8,15 @@
   <meta name="referrer" content="no-referrer" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; form-action 'none'" />
   <title>snUAEkerhead — Always exploring</title>
+  <link rel="canonical" href="https://snuaekerhead.ae/" />
   <link rel="icon" href="favicon.ico" sizes="any" />
   <link rel="icon" href="favicon.png" type="image/png" sizes="64x64" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180" />
-  <link rel="preload" href="images/exploration-1800.webp" imagesrcset="images/exploration-780.webp 780w, images/exploration-1200.webp 1200w, images/exploration-1800.webp 1800w, images/exploration-2264.webp 2264w" imagesizes="(max-width: 700px) 100vw, 58vw" as="image" type="image/webp" />
+  <link rel="preload" href="images/exploration-1800.webp" imagesrcset="images/exploration-780.webp 780w, images/exploration-1200.webp 1200w, images/exploration-1800.webp 1800w, images/exploration-2264.webp 2264w" imagesizes="(max-width: 700px) and (max-height: 480px) and (min-aspect-ratio: 4/3) 42vw, (max-width: 700px) 100vw, (max-width: 1000px) 56vw, 58vw" as="image" type="image/webp" />
   <link rel="preload" href="fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="styles.css?v=20261011-viewport" />
-  <script src="site.js?v=20261011-editorial" defer></script>
+  <link rel="preload" href="fonts/cormorant-garamond-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="styles.css?v=20261107-controls" />
+  <script src="site.js?v=20261107-controls" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -36,7 +38,9 @@
             <defs><mask id="brand-symbol-mask" mask-type="luminance" maskUnits="userSpaceOnUse" x="250" y="270" width="900" height="380"><image href="images/brand-emblem-640.webp" width="1368" height="1150" /></mask></defs>
             <rect x="250" y="270" width="900" height="380" fill="currentColor" mask="url(#brand-symbol-mask)" />
           </svg>
-          <h1 id="hero-title">Rooted in the UAE.<br />Always exploring.</h1>
+          <h1 id="hero-title">Rooted in the UAE.
+            <span class="hero-title__journey">Always exploring.</span>
+          </h1>
           <p class="hero-copy">Streetwear informed by sneaker culture,<br class="desktop-break" /> travel and design.</p>
           <a id="hero-explore" class="explore-link" href="#exploration">Explore<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true" focusable="false"><path d="M3 12h18m-6-6 6 6-6 6" /></svg></a>
         </div>
@@ -51,9 +55,9 @@
       </div>
       <figure class="hero-photo">
         <div class="photo-frame">
-          <img id="exploration-image" src="images/exploration-1800.webp" srcset="images/exploration-780.webp 780w, images/exploration-1200.webp 1200w, images/exploration-1800.webp 1800w, images/exploration-2264.webp 2264w" sizes="(max-width: 700px) 100vw, 58vw" width="2264" height="3500" alt="A view looking down at tan sneakers and camouflage trousers on concrete." fetchpriority="high" decoding="async" />
+          <img id="exploration-image" src="images/exploration-1800.webp" srcset="images/exploration-780.webp 780w, images/exploration-1200.webp 1200w, images/exploration-1800.webp 1800w, images/exploration-2264.webp 2264w" sizes="(max-width: 700px) and (max-height: 480px) and (min-aspect-ratio: 4/3) 42vw, (max-width: 700px) 100vw, (max-width: 1000px) 56vw, 58vw" width="2264" height="3500" alt="A view looking down at tan sneakers and camouflage trousers on concrete." fetchpriority="high" decoding="async" />
         </div>
-        <figcaption class="photo-caption"><span class="photo-caption__title">Always exploring.</span><button id="motion-toggle" class="motion-button" type="button" hidden><span id="motion-label">Pause motion</span></button></figcaption>
+        <figcaption class="photo-caption"><span class="photo-caption__title">Always exploring.</span></figcaption>
       </figure>
     </section>
     <footer class="landing-footer"><a href="#about">About snUAEkerhead</a><a href="#enquiries">Enquiries</a></footer>
@@ -72,7 +76,7 @@
           </section>
           <section class="content-section">
             <h3 class="section-title">A considered approach</h3>
-            <p>Presence is the confidence of a silhouette or graphic that holds its own. Control is the judgement behind its scale, spacing, colour and placement. Together, they give our work its direction.</p>
+            <p>Presence is the confidence of a silhouette or graphic that holds its own. Control is the judgement behind its scale, spacing, colour and placement.</p>
             <p>With a restrained palette, shape and texture carry more of the expression. Typography, proportion and the space around an element all contribute to how a design is read.</p>
           </section>
           <section class="content-section">
@@ -93,13 +97,12 @@
           <p>We travel with an eye for how people dress and how places take shape. An outfit, a building, a carefully presented object: each can offer a new way to think about proportion, colour and composition.</p>
           <section class="content-section">
             <h3 class="section-title">Dubai: presence and presentation</h3>
-            <p>Dubai has shaped our relationship with the UAE and our understanding of presence. Its architecture, international culture and attention to presentation continue to influence how we think about confidence and detail.</p>
             <p>Our experiences in the city’s hospitality and dining sharpened an appreciation for considered service and precise execution. We carry that attention to detail into how we develop and present our work.</p>
           </section>
           <section class="content-section">
             <h3 class="section-title">Tokyo: proportion and individuality</h3>
             <p class="journey-note">September 2026</p>
-            <p>In Tokyo, we explored fashion and retail across Shibuya, Harajuku, Marunouchi and Otemachi. Shibuya PARCO and vintage retailer Desert Snow were among our stops. Just as much came from noticing how people wore and combined their clothes.</p>
+            <p>In Tokyo, we explored fashion and retail across Shibuya, Harajuku, Marunouchi and Otemachi. Shibuya PARCO and vintage retailer Desert Snow were among our stops. The way people wore and combined their clothes was just as revealing.</p>
             <p>Wide trousers, boxy T-shirts, layering and distinctive footwear caught our attention. Muted colours often allowed shape, texture and proportion to carry the visual interest.</p>
             <p>Those encounters sharpened our interest in drape, collar construction and the relationship between restraint and personal style.</p>
           </section>
@@ -112,11 +115,10 @@
           <section class="content-section">
             <h3 class="section-title">A continuing practice</h3>
             <p>The journey continues through photography, garment research and the refinement of artwork. Tokyo is the first concept in our developing Travel Series, exploring connections between the UAE and Japan through apparel graphics and label treatments.</p>
-            <p>Every chapter begins with experience and research, giving us something meaningful to carry into the work.</p>
           </section>
         </div>
       </section>
-      <section id="enquiries"><h2>Enquiries</h2><p>For general enquiries about snUAEkerhead, please contact us by email.</p><a class="text-link" href="mailto:enquiries@snuaekerhead.ae">enquiries@snuaekerhead.ae</a></section>
+      <section id="enquiries"><h2>Enquiries</h2><p>For services and enquiries, please contact us by email.</p><a class="text-link" href="mailto:enquiries@snuaekerhead.ae">enquiries@snuaekerhead.ae</a></section>
     </div>
   </noscript>
   <dialog id="site-menu" class="menu-panel" aria-labelledby="menu-title">
@@ -141,7 +143,7 @@
           </section>
           <section class="content-section">
             <h3 class="section-title">A considered approach</h3>
-            <p>Presence is the confidence of a silhouette or graphic that holds its own. Control is the judgement behind its scale, spacing, colour and placement. Together, they give our work its direction.</p>
+            <p>Presence is the confidence of a silhouette or graphic that holds its own. Control is the judgement behind its scale, spacing, colour and placement.</p>
             <p>With a restrained palette, shape and texture carry more of the expression. Typography, proportion and the space around an element all contribute to how a design is read.</p>
           </section>
           <section class="content-section">
@@ -161,13 +163,12 @@
           <p>We travel with an eye for how people dress and how places take shape. An outfit, a building, a carefully presented object: each can offer a new way to think about proportion, colour and composition.</p>
           <section class="content-section">
             <h3 class="section-title">Dubai: presence and presentation</h3>
-            <p>Dubai has shaped our relationship with the UAE and our understanding of presence. Its architecture, international culture and attention to presentation continue to influence how we think about confidence and detail.</p>
             <p>Our experiences in the city’s hospitality and dining sharpened an appreciation for considered service and precise execution. We carry that attention to detail into how we develop and present our work.</p>
           </section>
           <section class="content-section">
             <h3 class="section-title">Tokyo: proportion and individuality</h3>
             <p class="journey-note">September 2026</p>
-            <p>In Tokyo, we explored fashion and retail across Shibuya, Harajuku, Marunouchi and Otemachi. Shibuya PARCO and vintage retailer Desert Snow were among our stops. Just as much came from noticing how people wore and combined their clothes.</p>
+            <p>In Tokyo, we explored fashion and retail across Shibuya, Harajuku, Marunouchi and Otemachi. Shibuya PARCO and vintage retailer Desert Snow were among our stops. The way people wore and combined their clothes was just as revealing.</p>
             <p>Wide trousers, boxy T-shirts, layering and distinctive footwear caught our attention. Muted colours often allowed shape, texture and proportion to carry the visual interest.</p>
             <p>Those encounters sharpened our interest in drape, collar construction and the relationship between restraint and personal style.</p>
           </section>
@@ -180,18 +181,14 @@
           <section class="content-section">
             <h3 class="section-title">A continuing practice</h3>
             <p>The journey continues through photography, garment research and the refinement of artwork. Tokyo is the first concept in our developing Travel Series, exploring connections between the UAE and Japan through apparel graphics and label treatments.</p>
-            <p>Every chapter begins with experience and research, giving us something meaningful to carry into the work.</p>
           </section>
         </div>
       </section>
       <section class="content-pane" data-pane="enquiries" hidden>
         <p class="eyebrow">Enquiries</p><h2 id="enquiries-title" tabindex="-1">Write to us.</h2>
-        <div class="content-copy"><p>For general enquiries about snUAEkerhead, please contact us by email.</p></div>
+        <div class="content-copy"><p>For services and enquiries, please contact us by email.</p></div>
         <div class="contact-options">
           <a class="text-link contact-address" href="mailto:enquiries@snuaekerhead.ae">enquiries@snuaekerhead.ae</a>
-          <button id="copy-address" class="copy-button" type="button">Copy address</button>
-          <p id="address-status" class="copy-status" role="status" aria-live="polite" hidden></p>
-          <input id="address-copy" class="copy-fallback" aria-label="Email address to copy" value="enquiries@snuaekerhead.ae" readonly hidden />
         </div>
       </section>
     </div>

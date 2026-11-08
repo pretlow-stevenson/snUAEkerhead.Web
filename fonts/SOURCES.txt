@@ -1,9 +1,15 @@
-Self-hosted Latin webfont supplied by Google Fonts.
+Self-hosted Latin webfonts supplied by Google Fonts.
 
 Manrope
 https://github.com/google/fonts/tree/main/ofl/manrope
-Variable 400-500, Google Fonts version 20.
+Variable weight range 200-800; the site uses 400-500.
 License: Manrope-OFL.txt
 
-Manrope is distributed under the SIL Open Font License 1.1.
-The webfont is served locally; the site makes no requests to Google Fonts.
+Cormorant Garamond
+https://github.com/CatharsisFonts/Cormorant
+https://github.com/google/fonts/tree/main/ofl/cormorantgaramond
+Roman variable weight range 300-700; the site uses 400-500.
+License: CormorantGaramond-OFL.txt
+
+Both families are distributed under the SIL Open Font License 1.1.
+The webfonts are served locally; the site makes no requests to Google Fonts.

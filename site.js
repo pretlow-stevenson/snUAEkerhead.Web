@@ -1,6 +1,5 @@
 'use strict';
 
-const ENQUIRY_ADDRESS = 'enquiries@snuaekerhead.ae';
 const menu = document.getElementById('site-menu');
 const openButton = document.getElementById('menu-open');
 const closeButton = document.getElementById('menu-close');
@@ -9,14 +8,11 @@ const panelBrand = document.getElementById('panel-brand');
 const panelScroll = menu.querySelector('.panel-scroll');
 const panes = Array.from(menu.querySelectorAll('[data-pane]'));
 const routes = new Set(panes.map(pane => pane.dataset.pane));
-const motionButton = document.getElementById('motion-toggle');
-const motionLabel = document.getElementById('motion-label');
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 let activeRoute = null;
 let requestedRoute = null;
 let returnFocus = openButton;
 let viewRevision = 0;
-let motionPaused = false;
 let panelTransition = null;
 let contentTransition = null;
 
@@ -25,10 +21,8 @@ function canAnimate() {
 }
 
 function updateMotion() {
-  const isPlaying = !motionPaused && canAnimate() && !menu.open;
+  const isPlaying = canAnimate() && !menu.open;
   document.body.dataset.motion = isPlaying ? 'playing' : 'paused';
-  motionButton.hidden = reducedMotion.matches;
-  motionLabel.textContent = motionPaused ? 'Resume motion' : 'Pause motion';
 }
 
 function cancelPanelTransition() {
@@ -69,7 +63,12 @@ function cancelContentTransition() {
   panelScroll.removeAttribute('aria-busy');
 }
 
-function focusRoute(route) {
+function focusRoute(route, previousFocus) {
+  const currentFocus = document.activeElement;
+  // A visitor can move to the persistent header while content is fading out.
+  const movedToHeader = previousFocus && currentFocus !== previousFocus &&
+    [closeButton, backLink, panelBrand].includes(currentFocus) && currentFocus.isConnected && !currentFocus.hidden;
+  if (movedToHeader) return;
   document.getElementById(route === 'menu' ? 'menu-title' : route + '-title').focus({ preventScroll: true });
 }
 
@@ -85,6 +84,7 @@ function showRoute(route) {
 }
 
 function transitionRoute(route) {
+  const previousFocus = document.activeElement;
   const previousStyle = typeof window.getComputedStyle === 'function' ? window.getComputedStyle(panelScroll) : null;
   const from = { opacity: previousStyle ? previousStyle.opacity : '1', transform: previousStyle ? previousStyle.transform : 'none' };
   cancelContentTransition();
@@ -97,7 +97,7 @@ function transitionRoute(route) {
   const leaving = panelScroll.animate([from, { opacity: 0, transform: 'translateY(-5px)' }], {
     duration: 160, easing: 'ease-in', fill: 'both'
   });
-  contentTransition = { animation: leaving, route };
+  contentTransition = { animation: leaving, route, previousFocus };
   menu.dataset.contentPhase = 'leaving';
   panelScroll.inert = true;
   panelScroll.setAttribute('aria-busy', 'true');
@@ -108,12 +108,12 @@ function transitionRoute(route) {
       { opacity: 0, transform: 'translateY(7px)' },
       { opacity: 1, transform: 'translateY(0)' }
     ], { duration: 240, easing: 'cubic-bezier(.22,1,.36,1)', fill: 'both' });
-    contentTransition = { animation: entering, route };
+    contentTransition = { animation: entering, route, previousFocus };
     leaving.cancel();
     menu.dataset.contentPhase = 'entering';
     panelScroll.inert = false;
     panelScroll.removeAttribute('aria-busy');
-    focusRoute(route);
+    focusRoute(route, previousFocus);
     entering.finished.then(() => {
       if (contentTransition && contentTransition.animation === entering) cancelContentTransition();
     }, () => {});
@@ -165,10 +165,11 @@ function settleMotionPreference() {
   if (!canAnimate()) {
     if (contentTransition) {
       const route = requestedRoute;
+      const previousFocus = contentTransition.previousFocus;
       cancelContentTransition();
-      if (menu.open && routes.has(route)) {
+      if (menu.open && routes.has(route) && activeRoute !== route) {
         showRoute(route);
-        focusRoute(route);
+        focusRoute(route, previousFocus);
       }
     }
     if (panelTransition) {
@@ -181,10 +182,6 @@ function settleMotionPreference() {
   updateMotion();
 }
 
-motionButton.addEventListener('click', () => {
-  motionPaused = !motionPaused;
-  updateMotion();
-});
 reducedMotion.addEventListener('change', settleMotionPreference);
 document.addEventListener('visibilitychange', settleMotionPreference);
 
@@ -236,35 +233,6 @@ menu.addEventListener('click', event => {
   if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) dismissMenu();
 });
 window.addEventListener('hashchange', renderRoute);
-
-const copyAddressButton = document.getElementById('copy-address');
-const addressStatus = document.getElementById('address-status');
-const addressCopy = document.getElementById('address-copy');
-let addressCopyAttempt = 0;
-
-copyAddressButton.addEventListener('click', async () => {
-  const view = viewRevision;
-  const attempt = ++addressCopyAttempt;
-  // Ignore clipboard permission responses after navigation or a newer request.
-  const isCurrent = () => view === viewRevision && attempt === addressCopyAttempt && menu.open && activeRoute === 'enquiries' && requestedRoute === 'enquiries' && menu.dataset.phase !== 'closing';
-  try {
-    await navigator.clipboard.writeText(ENQUIRY_ADDRESS);
-    if (!isCurrent()) return;
-    copyAddressButton.textContent = 'Copied';
-    addressCopy.hidden = true;
-    addressStatus.textContent = 'Email address copied.';
-  } catch {
-    if (!isCurrent()) return;
-    copyAddressButton.textContent = 'Copy address';
-    addressCopy.hidden = false;
-    if (document.activeElement === copyAddressButton) {
-      addressCopy.focus();
-      addressCopy.select();
-    }
-    addressStatus.textContent = 'Select and copy the email address below.';
-  }
-  addressStatus.hidden = false;
-});
 
 // Reveal the trigger only once the complete interactive path is ready.
 openButton.hidden = false;
