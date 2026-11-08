@@ -1,3 +1,26 @@
+Current main family: Instrument Sans
+https://github.com/Instrument/instrument-sans
+https://github.com/google/fonts/tree/main/ofl/instrumentsans
+Source: InstrumentSans[wdth,wght].ttf from the official Google Fonts repository.
+Weight range 400-700; the site uses 400 and 500.
+Width fixed at the original default of 100. Latin/Latin Extended-A and common
+punctuation subset, converted to WOFF2 using FontTools.
+License: InstrumentSans-OFL.txt
+Retrieved: 2026-11-07
+
+The webfont is served locally; the site makes no requests to Google Fonts.
+
+Section-title family: Newsreader
+https://github.com/productiontype/Newsreader
+https://github.com/google/fonts/tree/main/ofl/newsreader
+Source: Newsreader[opsz,wght].ttf from the official Google Fonts repository.
+Roman weight fixed at 500; the optical-size axis is retained for automatic sizing.
+Latin/Latin Extended-A and common punctuation subset, converted to WOFF2 using FontTools.
+License: Newsreader-OFL.txt
+Retrieved: 2026-11-07
+
+Retained inactive source assets (not referenced by the current site):
+
 Self-hosted Latin webfonts supplied by Google Fonts.
 
 Manrope
