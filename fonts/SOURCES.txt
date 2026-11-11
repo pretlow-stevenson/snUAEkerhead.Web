@@ -10,7 +10,7 @@ Retrieved: 2026-11-07
 
 The webfont is served locally; the site makes no requests to Google Fonts.
 
-Section-title family: Newsreader
+Hero and section-title family: Newsreader
 https://github.com/productiontype/Newsreader
 https://github.com/google/fonts/tree/main/ofl/newsreader
 Source: Newsreader[opsz,wght].ttf from the official Google Fonts repository.
