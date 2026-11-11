@@ -4,7 +4,6 @@ const menu = document.getElementById('site-menu');
 const openButton = document.getElementById('menu-open');
 const closeButton = document.getElementById('menu-close');
 const backLink = document.getElementById('panel-back');
-const panelBrand = document.getElementById('panel-brand');
 const panelScroll = menu.querySelector('.panel-scroll');
 const panes = Array.from(menu.querySelectorAll('[data-pane]'));
 const routes = new Set(panes.map(pane => pane.dataset.pane));
@@ -67,7 +66,7 @@ function focusRoute(route, previousFocus) {
   const currentFocus = document.activeElement;
   // A visitor can move to the persistent header while content is fading out.
   const movedToHeader = previousFocus && currentFocus !== previousFocus &&
-    [closeButton, backLink, panelBrand].includes(currentFocus) && currentFocus.isConnected && !currentFocus.hidden;
+    [closeButton, backLink].includes(currentFocus) && currentFocus.isConnected && !currentFocus.hidden;
   if (movedToHeader) return;
   document.getElementById(route === 'menu' ? 'menu-title' : route + '-title').focus({ preventScroll: true });
 }
@@ -77,7 +76,6 @@ function showRoute(route) {
   panes.forEach(pane => { pane.hidden = pane.dataset.pane !== route; });
   const isMenu = route === 'menu';
   backLink.hidden = isMenu;
-  panelBrand.hidden = !isMenu;
   menu.dataset.view = route;
   menu.setAttribute('aria-labelledby', isMenu ? 'menu-title' : route + '-title');
   panelScroll.scrollTop = 0;

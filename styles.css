@@ -56,8 +56,6 @@ button, figure, p, h1, h2, h3 { margin: 0; }
 a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
 .screen-reader-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 
-.brand-name { display: inline-flex; align-items: center; min-height: 44px; font-size: 20px; font-weight: 500; letter-spacing: -.025em; white-space: nowrap; }
-.brand-accent { color: var(--accent); }
 .hero-actions { grid-column: 2; grid-row: 1; align-self: start; justify-self: end; position: relative; z-index: 2; display: flex; align-items: center; gap: 24px; margin: max(20px, env(safe-area-inset-top)) max(var(--page-gutter), env(safe-area-inset-right)) 0 16px; color: #fff; text-shadow: 0 1px 8px rgb(0 0 0 / .3); }
 .hero-contact, .menu-button { display: inline-flex; align-items: center; min-height: 44px; padding: 0; font-size: var(--text-small); font-weight: 500; line-height: 1.4; white-space: nowrap; }
 .hero-contact:hover, .hero-actions .menu-button:hover span { text-decoration: underline; text-underline-offset: 5px; }
@@ -89,7 +87,7 @@ body[data-motion="playing"] .photo-frame img { animation-play-state: running; }
 .menu-panel::backdrop { background: rgb(22 25 22 / .36); transition: background-color var(--panel-duration) ease; }
 .menu-panel[data-phase="closed"]::backdrop, .menu-panel[data-phase="closing"]::backdrop { background: rgb(22 25 22 / 0); }
 .menu-panel__header { display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; min-height: 80px; margin: 0 48px; border-bottom: 1px solid var(--rule); }
-.icon-button { display: inline-flex; align-items: center; justify-content: center; width: 48px; min-height: 48px; padding: 12px; margin-right: -12px; }
+.icon-button { display: inline-flex; align-items: center; justify-content: center; width: 48px; min-height: 48px; padding: 12px; margin-left: auto; margin-right: -12px; }
 .icon-button svg, .panel-back svg { width: 24px; height: 24px; }
 .panel-back { display: inline-flex; align-items: center; gap: 12px; min-height: 48px; font-size: var(--text-small); font-weight: 500; }
 .panel-scroll { flex: 1; min-height: 0; overflow: auto; padding: 40px 48px; scrollbar-width: thin; scrollbar-color: var(--control) transparent; overscroll-behavior: contain; }

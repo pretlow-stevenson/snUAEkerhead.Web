@@ -94,7 +94,7 @@ function createSite(initialHash = '', options = {}) {
   }
 
   for (const id of [
-    'site-menu', 'menu-open', 'menu-close', 'panel-back', 'panel-brand', 'panel-scroll', 'first-menu-link',
+    'site-menu', 'menu-open', 'menu-close', 'panel-back', 'panel-scroll', 'first-menu-link',
     'hero-explore', 'menu-title', 'about-title', 'exploration-title', 'enquiries-title'
   ]) elements.set(id, new Element(id));
   for (const route of ['menu', 'about', 'exploration', 'enquiries']) {
@@ -371,20 +371,15 @@ for (const { initialRoute, destination, control } of [
   });
 }
 
-for (const { initialRoute, destination, control } of [
-  { initialRoute: 'menu', destination: 'about', control: 'panel-brand' },
-  { initialRoute: 'about', destination: 'menu', control: 'panel-back' }
-]) {
-  test('route fades replace focus on the outgoing ' + control + ' control when it becomes hidden', () => {
-    const site = createSite('#' + initialRoute, { manualTransitions: true });
-    site.flushTransitions();
-    site.route(destination);
-    site.elements.get(control).focus();
-    site.animations.at(-1).finish();
-    assert.equal(site.elements.get(control).hidden, true);
-    assert.equal(site.document.activeElement.id, destination + '-title');
-  });
-}
+test('route fades replace focus on the outgoing back link when it becomes hidden', () => {
+  const site = createSite('#about', { manualTransitions: true });
+  site.flushTransitions();
+  site.route('menu');
+  site.elements.get('panel-back').focus();
+  site.animations.at(-1).finish();
+  assert.equal(site.elements.get('panel-back').hidden, true);
+  assert.equal(site.document.activeElement.id, 'menu-title');
+});
 
 test('route fades do not preserve a disconnected header control or an unchanged focus origin', () => {
   const site = createSite('#menu', { manualTransitions: true });
