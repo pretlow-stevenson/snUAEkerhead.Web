@@ -86,7 +86,7 @@ body[data-motion="playing"] .photo-frame img { animation-play-state: running; }
 .menu-panel[data-phase="closing"] { --panel-duration: 380ms; transition-timing-function: cubic-bezier(.4, 0, .2, 1), ease; }
 .menu-panel::backdrop { background: rgb(22 25 22 / .36); transition: background-color var(--panel-duration) ease; }
 .menu-panel[data-phase="closed"]::backdrop, .menu-panel[data-phase="closing"]::backdrop { background: rgb(22 25 22 / 0); }
-.menu-panel__header { display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; min-height: 80px; margin: 0 48px; border-bottom: 1px solid var(--rule); }
+.menu-panel__header { display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; min-height: 80px; margin: 0 48px; }
 .icon-button { display: inline-flex; align-items: center; justify-content: center; width: 48px; min-height: 48px; padding: 12px; margin-left: auto; margin-right: -12px; }
 .icon-button svg, .panel-back svg { width: 24px; height: 24px; }
 .panel-back { display: inline-flex; align-items: center; gap: 12px; min-height: 48px; font-size: var(--text-small); font-weight: 500; }
@@ -108,7 +108,6 @@ body[data-motion="playing"] .photo-frame img { animation-play-state: running; }
 .contact-options { margin-top: 28px; }
 .text-link { display: inline-flex; align-items: center; min-height: 44px; font-size: 16px; font-weight: 500; text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 1px; }
 .contact-address { overflow-wrap: anywhere; min-width: 0; max-width: 100%; }
-.panel-footer { flex-shrink: 0; margin: 0 48px; padding: 18px 0; border-top: 1px solid var(--rule); color: var(--body); font-size: var(--text-small); line-height: 1.4; }
 .no-script { max-width: 740px; padding: 40px var(--page-gutter); color: var(--body); line-height: 1.65; }
 .no-script > section + section { margin-top: 48px; }
 
@@ -137,7 +136,6 @@ body[data-motion="playing"] .photo-frame img { animation-play-state: running; }
   .explore-link { margin-top: 20px; }
   .menu-panel__header { margin-inline: 28px; }
   .panel-scroll { padding: 32px 28px; }
-  .panel-footer { margin-inline: 28px; }
 }
 
 /* Reclaim space through composition and spacing, never through unreadably small type. */
