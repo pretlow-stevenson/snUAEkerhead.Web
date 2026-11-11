@@ -21,7 +21,7 @@ When changing the script or stylesheet, update its asset version in `index.html`
 
 The hero photograph pans and zooms over 12 seconds, then returns over 12 seconds. Reduced-motion preferences disable animation, and open dialogs or hidden documents suspend it.
 
-The interactive landing fits the available viewport height, adapting its spacing and composition for portrait and landscape screens. Longer editorial content scrolls inside the menu panel. Very short windows and the no-JavaScript reading view retain normal scrolling so text and controls remain accessible.
+The interactive landing fits the available viewport height, adapting its spacing and composition for portrait and landscape screens. Enquiries and Menu sit over the photograph’s upper-right corner on desktop and mobile, with a stationary dark gradient for contrast. There is no separate page header or footer navigation. Longer editorial content scrolls inside the menu panel. Very short windows and the no-JavaScript reading view retain normal scrolling so text and controls remain accessible.
 
 The menu and editorial sections share a stable panel width. Opening takes 520 ms and closing takes 380 ms, with a fading backdrop; content changes fade out over 160 ms and in over 240 ms. The dialog retains its modal focus boundary and scroll lock until exit completes. Reduced motion and hidden tabs settle pending transitions immediately. Interrupted navigation uses the latest destination. Keyboard focus moved deliberately to a persistent header control remains there while the next section appears; settling an incoming transition preserves reading position.
 

@@ -15,24 +15,20 @@
   <link rel="preload" href="images/exploration-1800.webp" imagesrcset="images/exploration-780.webp 780w, images/exploration-1200.webp 1200w, images/exploration-1800.webp 1800w, images/exploration-2264.webp 2264w" imagesizes="(max-width: 700px) and (max-height: 480px) and (min-aspect-ratio: 4/3) 42vw, (max-width: 700px) 100vw, (max-width: 1000px) 56vw, 58vw" as="image" type="image/webp" />
   <link rel="preload" href="fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="fonts/newsreader-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="styles.css?v=20261110-hero-scale" />
+  <link rel="stylesheet" href="styles.css?v=20261111-image-navigation" />
   <script src="site.js?v=20261107-controls" defer></script>
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand-name" href="#" aria-label="snUAEkerhead — Home">sn<span class="brand-accent">UAE</span>kerhead</a>
-    <div class="header-actions">
-      <a class="header-contact" href="#enquiries">Enquiries</a>
-      <button id="menu-open" class="menu-button" type="button" aria-label="Open menu" aria-haspopup="dialog" aria-controls="site-menu" aria-expanded="false" hidden>
-        <span>Menu</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true" focusable="false"><path d="M2 8h20M2 16h20" /></svg>
-      </button>
-    </div>
-  </header>
   <main>
     <section class="hero" aria-labelledby="hero-title">
+      <nav class="hero-actions" aria-label="Quick navigation">
+        <a class="hero-contact" href="#enquiries">Enquiries</a>
+        <button id="menu-open" class="menu-button" type="button" aria-label="Open menu" aria-haspopup="dialog" aria-controls="site-menu" aria-expanded="false" hidden>
+          <span>Menu</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true" focusable="false"><path d="M2 8h20M2 16h20" /></svg>
+        </button>
+      </nav>
       <div class="hero-intro">
-        <p class="hero-origin">United Arab Emirates</p>
         <div class="hero-statement">
           <h1 id="hero-title">Always Exploring</h1>
           <p class="hero-copy">Streetwear shaped by sneakers and the places we go.</p>
@@ -53,7 +49,6 @@
         </div>
       </figure>
     </section>
-    <footer class="landing-footer"><a href="#about">About snUAEkerhead</a><a href="#enquiries">Enquiries</a></footer>
   </main>
   <noscript>
     <div class="no-script">
